@@ -8,7 +8,7 @@ public class Diamond
     private readonly char newLineChar = '\n'; 
     private readonly char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
-    public Diamond(char letter, char spaceChar = '-')
+    public Diamond(char letter, char spaceChar = ' ')
     {
         _letter = letter;
         _spaceChar = spaceChar;

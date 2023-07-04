@@ -5,6 +5,8 @@ namespace DiamondKata.UnitTests
 {
     public class DiamondTests
     {
+        char spaceChar = '-';
+
         [Fact]
         public void Diamond_ShouldBeSingleCharacter_WhenInitialisedWithA()
         {
@@ -13,7 +15,7 @@ namespace DiamondKata.UnitTests
 
             // Act
 
-            var diamond = new Diamond(diamondLetter);
+            var diamond = new Diamond(diamondLetter, spaceChar);
 
             // Assert
             diamond.ToString().Should().Be("A");
@@ -27,7 +29,7 @@ namespace DiamondKata.UnitTests
 
             // Act
 
-            var diamond = new Diamond(diamondLetter);
+            var diamond = new Diamond(diamondLetter, spaceChar);
 
             // Assert
             var expectedResult = "-A-\n" + 
