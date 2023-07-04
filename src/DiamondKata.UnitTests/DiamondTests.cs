@@ -81,12 +81,12 @@ namespace DiamondKata.UnitTests
             diamond.ToString().Should().Be(expectedResult);
         }
 
-        [Fact]
-        public void Diamond_ShouldThrowArgumentException_WhenInitialisedWithInvalidCharacter()
+        [Theory]
+        [InlineData('%')]
+        [InlineData('&')]
+        [InlineData('1')]
+        public void Diamond_ShouldThrowArgumentException_WhenInitialisedWithInvalidCharacter(char invalidDiamondLetter)
         {
-            // Arrange
-            var invalidDiamondLetter = '&';
-
             // Act & Assert
 
             try
