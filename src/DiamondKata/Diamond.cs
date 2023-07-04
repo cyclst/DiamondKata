@@ -23,6 +23,16 @@ public class Diamond
     {
         var rows = new List<string>();
 
+        var diamondTopHalfRows = GetDiamondTopHalfRows();
+
+        rows.AddRange(diamondTopHalfRows);
+        rows.AddRange(GetDiamondBottomHalfRows(diamondTopHalfRows));
+
+        return rows;
+    }
+
+    private IEnumerable<string> GetDiamondTopHalfRows()
+    {
         // Credit https://stackoverflow.com/questions/20044730/convert-character-to-its-alphabet-integer-position/20044767#20044767
         var letterAlphabetArrayPosition = _letter - 64 - 1; // -1 because we want a zero based index
 
@@ -32,17 +42,13 @@ public class Diamond
         {
             var row = GetDiamondRow(i, colCount);
 
-            rows.Add(row);
+            yield return row;
         }
+    }
 
-        for (int i = rows.Count - 2; i >= 0; i--)
-        {
-            var row = rows[i];
-
-            rows.Add(row);
-        }
-
-        return rows;
+    private IEnumerable<string> GetDiamondBottomHalfRows(IEnumerable<string> topHalfRows)
+    {
+        return topHalfRows.Reverse().Skip(1);
     }
 
     private string GetDiamondRow(int rowLetterPosition, int colCount)
