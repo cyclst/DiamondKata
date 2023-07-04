@@ -38,5 +38,29 @@ namespace DiamondKata.UnitTests
 
             diamond.ToString().Should().Be(expectedResult);
         }
+
+        [Fact]
+        public void Diamond_ShouldBe9RowDiamond_WhenInitialisedWithE()
+        {
+            // Arrange
+            var diamondLetter = 'E';
+
+            // Act
+
+            var diamond = new Diamond(diamondLetter, spaceChar);
+
+            // Assert
+            var expectedResult = "----A----\n" +
+                                 "---B-B---\n" +
+                                 "--C---C--\n" +
+                                 "-D-----D-\n" +
+                                 "E-------E\n" +
+                                 "-D-----D-\n" +
+                                 "--C---C--\n" +
+                                 "---B-B---\n" +
+                                 "----A----";
+
+            diamond.ToString().Should().Be(expectedResult);
+        }
     }
 }
