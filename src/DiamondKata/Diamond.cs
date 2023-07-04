@@ -10,7 +10,7 @@ public class Diamond
 
     public Diamond(char letter, char spaceChar = ' ')
     {
-        _letter = letter;
+        _letter = char.ToUpper(letter);
         _spaceChar = spaceChar;
     }
 
