@@ -80,5 +80,29 @@ namespace DiamondKata.UnitTests
 
             diamond.ToString().Should().Be(expectedResult);
         }
+
+        [Fact]
+        public void Diamond_ShouldThrowArgumentException_WhenInitialisedWithInvalidCharacter()
+        {
+            // Arrange
+            var invalidDiamondLetter = '&';
+
+            // Act & Assert
+
+            try
+            {
+                var diamond = new Diamond(invalidDiamondLetter, spaceChar);
+
+                Assert.Fail("ArgumentException not thrown");
+            }
+            catch (ArgumentException)
+            {
+                // All good
+            }
+            catch
+            {
+                Assert.Fail("Unexpected exception type");
+            }
+        }
     }
 }
