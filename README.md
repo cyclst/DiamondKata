@@ -149,6 +149,8 @@ Looks good. What about 0? 0 always = 0? Looks that way.
 
 Now we have out internal space count and our row size, we can easily come up with how many padding spaces each side are needed, which will be ([row_count]-[internal_space_count])/2 or p = (r-i)/2
 
-#### Step 7:
+#### Additional Considerations:
 
-At this point we notice that there has been a lot of cutting and pasting from the top half of the diamond to the bottom half. We may be able to use this at some point...
+- At this point we notice that there has been a lot of cutting and pasting from the top half of the diamond to the bottom half. We may be able to use this to increase efficiency...
+- The diamond logic should validate that only a valid alphabet character is passed to it
+- The requirements do not specify how lower case letters should be handle. We will assume that they will be transformed to uppercase for now
