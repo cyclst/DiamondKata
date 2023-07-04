@@ -1,4 +1,6 @@
-﻿namespace DiamondKata;
+﻿using System.Text.RegularExpressions;
+
+namespace DiamondKata;
 
 public class Diamond
 {
@@ -10,6 +12,9 @@ public class Diamond
 
     public Diamond(char letter, char spaceChar = ' ')
     {
+        if (!Regex.IsMatch(letter.ToString(), "[a-z]", RegexOptions.IgnoreCase))
+            throw new ArgumentException("Invalid letter");
+
         _letter = char.ToUpper(letter);
         _spaceChar = spaceChar;
     }
