@@ -62,5 +62,23 @@ namespace DiamondKata.UnitTests
 
             diamond.ToString().Should().Be(expectedResult);
         }
+
+        [Fact]
+        public void Diamond_ShouldBeUppercase3RowDiamond_WhenInitialisedWithLowercaseb()
+        {
+            // Arrange
+            var diamondLetter = 'b';
+
+            // Act
+
+            var diamond = new Diamond(diamondLetter, spaceChar);
+
+            // Assert
+            var expectedResult = "-A-\n" +
+                                 "B-B\n" +
+                                 "-A-";
+
+            diamond.ToString().Should().Be(expectedResult);
+        }
     }
 }
