@@ -137,7 +137,7 @@ Now we know what our grids look like, how are the spaces (dashes) distributed in
 
 #### Step 6:
 
-Can we come up with a formula for internal spaces? It looks like for any row with 2 numbers in (i.e. not rows with just a 0 in), we can say internal spaces (i) can be expressed as length of the row (2n+1) minus the 2 numbers in the row, which can be reduced to 2n-1
+Can we come up with a formula for internal spaces for each row? It looks like for any row with 2 numbers in (i.e. not rows with just a 0 in), we can say internal spaces (i) can be expressed using the same formula as before (2n+1) minus the 2 numbers in the row, which looks like 2n+1-1. This can be reduced to 2n-1.
 
 Let's give it a whirl:
 
@@ -147,7 +147,7 @@ Let's give it a whirl:
 
 Looks good. What about 0? 0 always = 0? Looks that way.
 
-Now we have out internal space count and our row size, we can easily come up with how many padding spaces each side are needed, which will be ([row_count]-[internal_space_count])/2 or p = (r-i)/2
+Now we have out internal space count and our row size, we can easily come up with how many padding spaces on each side are needed, which will be ([col_count]-[internal_space_count]-[number_count])/2.
 
 #### Additional Considerations:
 
